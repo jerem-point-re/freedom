@@ -23,6 +23,7 @@ if (isset($_GET['p'])) {
             showStart();
             break;
     }
-} else showStart();
+} else
+    showStart();
 
 ?>

@@ -1,40 +1,61 @@
-<?php global $baseUrl; ?>
+<?php
+
+global $baseUrl;
+global $logged;
+
+?>
 
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="assets/<?= $css ?>">
 
-        <?php
-            if($js) {
-                echo "<script src='assets/<?= $js ?>' defer></script>";
-            }
-        ?>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
 
-        <title>Freedom | <?= $title ?></title>
-    </head>
 
-    <body>
-        <header>
-            <nav>
-                <h1>Freedom | <?= $title ?></h1>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js" defer></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js" defer></script>
 
-                <ul>
-                    <li><a href="<?= $baseUrl ?>" <?php if ($title == 'Home') echo 'class="active-page"' ?>>Home</a></li>
-                    <?php
-                        if ($_SESSION) {
-                            echo "<li><a href=\"$baseUrl?p=profile\>Profile</a></li>";
-                            echo "<li><a href=\"$baseUrl?p=friend\>Friend</a></li>";
-                            
-                        } else echo "<li><a href=\"$baseUrl?p=log\">Login</a></li>";
-                    ?>
-                    
-                </ul>
-            </nav>
-        </header>
+    <title> Freedom | <?= $title ?> </title>
+</head>
 
+<body>
+    <div class="header">
+        <div class="nav">
+            <ul>
+                <li class="logo">
+                    <a href="<?= $baseUrl ?>"><img src="assets/img/logo.png" alt=""></a>
+                </li>
+                <li>
+                    <a href="<?= $baseUrl ?>">
+                        <ion-icon name="home" size="large"></ion-icon>
+                    </a>
+                </li>
+                <li>
+                    <a href="<?= $baseUrl ?>?p=log">
+                        <ion-icon name="log-in" size="large"></ion-icon>
+                    </a>
+                </li>
+                <li>
+                    <a href="<?= $baseUrl ?>?p=join">
+                        <ion-icon name="person-add" size="large"></ion-icon>
+                    </a>
+                </li>
+                <?php if($logged) { ?>
+                    <li>
+                        <a href="<?= $baseUrl ?>?p=out">
+                            <ion-icon name="log-out" size="large"></ion-icon>
+                        </a>
+                    </li>
+                <?php } ?>
+            </ul>
+        </div>
+    </div>
+
+    <div class="main">
         <?= $content ?>
-    </body>
+    </div>
+</body>
+
 </html>

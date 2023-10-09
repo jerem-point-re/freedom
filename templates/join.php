@@ -1,5 +1,5 @@
 <?php
-function showLoginPage() {
+function showJoinPage() {
     $title = 'Login';
 
     $class = 'login';

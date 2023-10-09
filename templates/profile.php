@@ -2,8 +2,6 @@
 function showProfilePage() {
     global $baseUrl;
     $title = 'Profile';
-    $css = 'css/style_profile.css';
-    $js = false;
 
     ob_start();
 ?>

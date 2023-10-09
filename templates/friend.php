@@ -2,8 +2,6 @@
 function showFriendPage() {
     global $baseUrl;
     $title = 'Friend';
-    $css = 'css/style_friend.css';
-    $js = false;
 
     ob_start();
 ?>

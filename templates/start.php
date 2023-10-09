@@ -2,8 +2,6 @@
 function showStartPage() {
     global $baseUrl;
     $title = 'Start';
-    $css = 'css/style_start.css';
-    $js = false;
 
     ob_start();
 ?>
