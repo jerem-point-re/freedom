@@ -1,0 +1,10 @@
+body {
+    background: #222428 !important;
+}
+
+body::before {
+    content: '<?= $css ?>';
+    position: fixed;
+    top: 0;
+    left: 0;
+}

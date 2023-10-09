@@ -1,0 +1,10 @@
+body {
+    background: #3880ff !important;
+}
+
+body::before {
+    content: 'style_login';
+    position: fixed;
+    top: 0;
+    left: 0;
+}

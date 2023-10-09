@@ -1,0 +1,10 @@
+body {
+    background: #92949c !important;
+}
+
+.nav::before {
+    content: 'style_nav';
+    position: fixed;
+    top: 0;
+    left: 0;
+}
