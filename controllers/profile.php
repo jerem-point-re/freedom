@@ -1,1 +1,6 @@
-<?php function showProfile () { showProfilePage(); } ?>
+<?php
+
+function showProfile () {
+    showProfilePage(); }
+    
+?>

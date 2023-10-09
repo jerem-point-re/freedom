@@ -1,11 +1,11 @@
 <?php 
-global $pdo;
+global $PDO;
 
 $host = 'localhost';
 $dbName = 'freedom';
 $username = 'root';
 $password = '';
 
-if (!isset($pdo)) $pdo = new PDO("mysql:host=$host;dbname=$dbName;charset=utf8", $username, $password);
+if (!isset($PDO)) $PDO = new PDO("mysql:host=$host;dbname=$dbName;charset=utf8", $username, $password);
 
 ?>

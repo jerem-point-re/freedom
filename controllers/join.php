@@ -1,5 +1,5 @@
 <?php
-function showLog()
+function showJoin()
 {
     global $baseUrl;
 
@@ -7,7 +7,7 @@ function showLog()
 
         $username = $_POST['username'];
         $password = $_POST['password'];
-        $result = login($username, $password);
+        $result = joinning($username, $password);
 
         if ($result)
             header("Location: $baseUrl");
@@ -15,5 +15,5 @@ function showLog()
             echo "Une erreur est survenue lors de la connexion";
         }
     }
-    showLoginPage();
+    showJoinPage();
 }

@@ -17,7 +17,9 @@ global $logged;
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js" defer></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js" defer></script>
 
-    <title> Freedom | <?= $title ?> </title>
+    <title> Freedom |
+        <?= $title ?>
+    </title>
 </head>
 
 <body>
@@ -32,17 +34,19 @@ global $logged;
                         <ion-icon name="home" size="large"></ion-icon>
                     </a>
                 </li>
+                <?php if (!$logged) { ?>
                 <li>
                     <a href="<?= $baseUrl ?>?p=log">
                         <ion-icon name="log-in" size="large"></ion-icon>
                     </a>
                 </li>
-                <li>
-                    <a href="<?= $baseUrl ?>?p=join">
-                        <ion-icon name="person-add" size="large"></ion-icon>
-                    </a>
-                </li>
-                <?php if($logged) { ?>
+                    <li>
+                        <a href="<?= $baseUrl ?>?p=join">
+                            <ion-icon name="person-add" size="large"></ion-icon>
+                        </a>
+                    </li>
+                <?php } ?>
+                <?php if ($logged) { ?>
                     <li>
                         <a href="<?= $baseUrl ?>?p=out">
                             <ion-icon name="log-out" size="large"></ion-icon>

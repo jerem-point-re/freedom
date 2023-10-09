@@ -5,10 +5,10 @@ require_once('autoload.php');
 if (isset($_GET['p'])) {
     switch ($_GET['p']) {
         case 'log':
-            showAuth();
+            showLog();
             break;
         case 'join':
-            showAuth();
+            showJoin();
             break;
         case 'start':
             showStart();
@@ -18,6 +18,13 @@ if (isset($_GET['p'])) {
             break;
         case 'friend':
             showFriend();
+            break;
+        case 'status':
+            showCreateStatus();
+            break;
+        case 'out':
+            session_destroy();
+            header("Location: $baseUrl");
             break;
         default:
             showStart();
